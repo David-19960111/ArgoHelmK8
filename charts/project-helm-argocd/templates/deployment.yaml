@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+namespace: python-app
 metadata:
   name: {{ include "project-helm-argocd.fullname" . }}
   labels:
@@ -79,7 +80,4 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      volumes:
-      - name: app-volume-chaim
-        persistentVolumeClaim:
-          claimName: {{ include "project-helm-argocd.fullname" . }}-pvc
+      
