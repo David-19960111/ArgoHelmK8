@@ -1,0 +1,15 @@
+{{- if .Values.PersistentVolume.enabled -}}
+apiVersion: v1
+kind: PersistentVolume
+namespace: python-app
+metadata:
+  name: {{ include "project-helm-argocd.fullname" . }}-pv
+spec:
+  capacity:
+    storage: {{ .Values.PersistentVolume.size}}  
+  accessModes:
+    - {{ .Values.PersistentVolume.accessMode}}
+  persistentVolumeReclaimPolicy: Retain
+  hostPath: 
+    path: /app/python-app
+{{- end}}

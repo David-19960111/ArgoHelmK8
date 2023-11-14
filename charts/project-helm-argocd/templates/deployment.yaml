@@ -40,6 +40,15 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          env:
+          - name: MENSAJE
+            valueFrom:
+              secretKeyRef:
+                name: {{ include "project-helm-argocd.fullname" . }}-secret
+                key: MENSAJE
+          volumeMounts:
+          - name: app-volume
+            mountPath: /usr/src/app/db
           livenessProbe:
             httpGet:
               path: /
@@ -70,3 +79,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+      - name: app-volume-chaim
+        persistentVolumeClaim:
+          claimName: {{ include "project-helm-argocd.fullname" . }}-pvc

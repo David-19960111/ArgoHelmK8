@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: anarkatomica1996/python-chart
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "1.0.1"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -40,8 +40,9 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort
+  port: 3000
+  targetPort: 3000
 
 ingress:
   enabled: false
@@ -96,3 +97,19 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+secretMessage:
+  create: true
+  message: "Hola DevOps soy una nueva version del Chart!"
+
+PersistentVolume:
+  enabled: true
+  size: 5Gi
+  accessMode: "ReadWriteOnce"
+  storageClass: ""
+
+PersistentVolumeClaim:
+  enabled: true
+  size: 5Gi
+  accessMode: "ReadWriteOnce"
+  storageClass: ""

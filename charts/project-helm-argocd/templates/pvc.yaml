@@ -1,0 +1,13 @@
+{{- if .Values.PersistentVolumeClaim.enabled -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+namespace: python-app
+metadata:
+  name: {{ include "project-helm-argocd.fullname" . }}-pvc
+spec:
+  accessModes:
+    - {{ .Values.PersistentVolumeClaim.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.PersistentVolumeClaim.size}}
+{{- end}} 
