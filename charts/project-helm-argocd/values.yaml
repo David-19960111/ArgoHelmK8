@@ -91,12 +91,12 @@ secretMessage:
 
 PersistentVolume:
   enabled: true
-  size: 5Gi
+  size: 10Gi
   accessMode: "ReadWriteOnce"
   storageClass: ""
 
 PersistentVolumeClaim:
   enabled: true
-  size: 5Gi
+  size: 10Gi
   accessMode: "ReadWriteOnce"
   storageClass: ""
