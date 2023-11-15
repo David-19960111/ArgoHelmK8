@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-app-project
+  namespace: argo-cd
+spec:
+  project: default
+  source:
+    chart: project-helm-argocd
+    repoURL:  https://david-19960111.github.io/ArgoHelmK8/ 
+    targetRevision: 0.1.5
+    helm:
+      releaseName: argocd-app-project
+  ## testear con el deploy de EKS
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: python-app
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true # permite forzar la creacion de NS.
+    automated:
+      prune: true # permite eliminar recursos que no estan en el repo.
+      selfHeal: true # permite pisar cambios manuales y mantiene sincronizado desde el repo.
