@@ -3,6 +3,16 @@ entries:
   project-helm-argocd:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-11-16T13:27:56.683569023Z"
+    description: A Helm chart for Kubernetes
+    digest: 7b1d9a22dc7cf2a110374b48bd08bc02b8f55fe3b319fa712993d2e51183f4b5
+    name: project-helm-argocd
+    type: application
+    urls:
+    - https://github.com/David-19960111/ArgoHelmK8/releases/download/project-helm-argocd-1.0.12/project-helm-argocd-1.0.12.tgz
+    version: 1.0.12
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-11-15T21:05:59.243727306Z"
     description: A Helm chart for Kubernetes
     digest: 5e429b4e824dd3bb37bc08c40846b48bfa521b2a624ba31497994db95e71cb13
@@ -101,4 +111,4 @@ entries:
     urls:
     - https://github.com/David-19960111/ArgoHelmK8/releases/download/project-helm-argocd-0.1.2/project-helm-argocd-0.1.2.tgz
     version: 0.1.2
-generated: "2023-11-15T21:05:59.243769144Z"
+generated: "2023-11-16T13:27:56.683626941Z"
