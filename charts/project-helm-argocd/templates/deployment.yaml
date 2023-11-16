@@ -68,6 +68,6 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
-      - name: app-volume-chaim
+      - name: app-volume
         persistentVolumeClaim:
           claimName: {{ include "project-helm-argocd.fullname" . }}-pvc
