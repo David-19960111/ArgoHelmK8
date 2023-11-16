@@ -8,7 +8,7 @@ image:
   repository: anarkatomica1996/python-chart
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.3"
+  tag: "1.0.5"
 
 imagePullSecrets: []
 nameOverride: ""
