@@ -8,7 +8,7 @@ spec:
   source:
     chart: project-helm-argocd
     repoURL:  https://david-19960111.github.io/ArgoHelmK8/ 
-    targetRevision: 0.1.9
+    targetRevision: 0.1.19
     helm:
       releaseName: argocd-app-project
   ## testear con el deploy de EKS
